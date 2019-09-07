@@ -1,0 +1,170 @@
+## vim: ft=gitconfig
+
+[user]
+	name = Kamil Zabielski
+	email = kamil.zabielski@sysdogs.com
+	signingkey = 39D25952B90091B02238360906BA5D4E10F53F3B
+	useConfigOnly = true
+
+
+[format]
+	signoff = true
+
+
+[init]
+	templateDir = ~/.git.d/git-template.d/
+
+
+[branch]
+	autosetuprebase = always
+
+
+[core]
+	editor = vim
+	excludesfile = ~/.git.d/gitignore
+	attributesFile = ~/.git.d/gitattributes
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+	untrackedCache = true
+	protectHFS = true
+	protectNTFS = true
+	pager = diff-so-fancy | less --tabs=4 -RFX
+
+
+[commit]
+	gpgsign = true
+	template = ~/.git.d/gitmessage
+
+
+[pull]
+	rebase = true
+
+
+[push]
+	default = upstream
+	followTags = true
+
+
+
+[merge]
+	log = true
+	tool = vimdiff
+	conflictstyle = diff3
+
+
+[apply]
+	whitespace = fix
+
+
+[color]
+	ui = auto
+
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+
+[diff]
+	tool = vimdiff
+	colorMoved = zebra
+
+
+[fetch]
+	prune = true
+	fsckObjects = true
+
+
+[receive]
+	fsckObjects = true
+
+
+[transfer]
+	fsckObjects = true
+	algorithm = patience
+
+
+[rebase]
+	stat = true
+	autosquash = true
+
+
+
+[status]
+	short = false
+	showUntrackedFiles = normal
+
+
+[http]
+	sslVerify = true
+	sslVersion = tlsv1.3
+
+
+
+[alias]
+	init = flow init -d
+	i = flow init -d
+	st = status
+	ss = status -s
+	c = clone
+	cd = checkout
+	ci = commit -s
+	cia = commit --amend -s
+	df = diff
+	dfs = diff --staged
+	dfw = diff --word-diff
+	dfsw = diff --staged --word-diff
+	lol = log --oneline --graph --decorate
+	merged = branch --merged
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+
+
+[tag]
+	gpgsign = true
+	forceSignAnnotated = true
+
+
+
+[secrets]
+	providers = git secrets --aws-provider
+	patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
+	patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
+	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
+	allowed = AKIAIOSFODNN7EXAMPLE
+	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+
+[gitflow "prefix"]
+	feature = feature/
+	release = release/
+	hotfix = hotfix/
+	support = support/
+	versiontag = ""
+
+
+[diff-so-fancy]
+	markEmptyLines = false
+	stripLeadingSymbols = false
+
+
+[diff "sopsdiffer"]
+	textconv = sops -d

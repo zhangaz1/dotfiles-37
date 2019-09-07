@@ -1,0 +1,66 @@
+## vim: ft=gitignore
+
+## Operating system files {{{1
+.DS_Store
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+.Trash
+._*
+desktop.ini
+ehthumbs.db
+Thumbs.db
+## }}}1
+
+
+## LaTeX {{{1
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+## }}}1
+
+
+# ViM {{{1
+.swp
+.*.swp
+# }}}1
+
+
+## Terraform {{{1
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
+## }}}1
+
+
+## Python {{{1
+*.pyc
+*.pyo
+__pycache__
+## }}}1
+
+
+## Python-virtualenv {{{1
+.venv/**
+.virtualenv/**
+## }}}1
+
+
+## IDEs {{{1
+.idea/**
+.vscode/**
+## }}}1
+
+
+## Vagrant {{{1
+.vagrant/**
+## }}}1

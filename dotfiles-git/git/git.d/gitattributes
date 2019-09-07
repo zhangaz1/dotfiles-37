@@ -1,0 +1,52 @@
+## vim: ft=gitattributes
+
+## git {{{1
+.gitignore     text
+.gitattributes text
+## }}}1
+
+
+## markdown {{{1
+*.md       text
+*.markdown text
+}}}
+
+
+## graphics {{{1
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.tif  binary
+*.tiff binary
+*.ico  binary
+*.eps  binary
+## }}}1
+
+
+## python {{{1
+*.pxd text
+*.py  text
+*.py3 text
+*.pyw text
+*.pyx text
+
+*.db  binary
+*.p   binary
+*.pkl binary
+*.pyc binary
+*.pyd binary
+*.pyo binary
+## }}}1
+
+
+## r {{{1
+*.R     text
+*.Rd    text
+*.Rdata text
+*.Rmd   text
+
+*.rdb binary
+*.rds binary
+*.Rdx binary
+## }}}1
