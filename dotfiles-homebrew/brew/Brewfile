@@ -24,6 +24,7 @@ brew "helmfile"
 brew "hub"
 brew "jq"
 brew "kubectx"
+brew "mas"
 brew "mysql"
 brew "nano"
 brew "nmap"
@@ -59,3 +60,13 @@ cask "powershell"
 cask "signal"
 cask "vagrant"
 cask "virtualbox"
+mas "Evernote", id: 406056744
+mas "feedly", id: 865500966
+mas "Kindle", id: 405399194
+mas "Magnet", id: 441258766
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft Outlook", id: 985367838
+mas "Microsoft Word", id: 462054704
+mas "Nozbe", id: 508957583
+mas "Skitch", id: 425955336
+mas "Slack", id: 803453959
