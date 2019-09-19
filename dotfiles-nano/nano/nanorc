@@ -1,0 +1,13 @@
+set autoindent
+set boldtext
+
+set tabsize 4
+set tabstospaces
+
+set constantshow
+
+unset backup
+unset mouse
+unset casesensitive
+
+include /usr/local/share/nano/*.nanorc
