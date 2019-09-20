@@ -1,6 +1,7 @@
-## tmux {{{1
+## path {{{1
 set -g fish_user_paths "/usr/local/opt/ncurses/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/coreutils/libexec/gnubin/" $fish_user_paths
 ## }}}1
 
 
