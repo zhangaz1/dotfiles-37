@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
@@ -68,6 +69,7 @@ cask "signal"
 cask "tor-browser"
 cask "vagrant"
 cask "virtualbox"
+cask "yubico-yubikey-manager"
 mas "Evernote", id: 406056744
 mas "feedly", id: 865500966
 mas "Kindle", id: 405399194
