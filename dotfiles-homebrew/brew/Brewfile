@@ -34,6 +34,7 @@ brew "nano"
 brew "nmap"
 brew "node"
 brew "pre-commit"
+brew "pstree"
 brew "pulumi"
 brew "ranger"
 brew "sops"
@@ -72,7 +73,9 @@ mas "feedly", id: 865500966
 mas "Kindle", id: 405399194
 mas "Magnet", id: 441258766
 mas "Microsoft Excel", id: 462058435
+mas "Microsoft OneNote", id: 784801555
 mas "Microsoft Outlook", id: 985367838
+mas "Microsoft To Do", id: 1274495053
 mas "Microsoft Word", id: 462054704
 mas "Nozbe", id: 508957583
 mas "Skitch", id: 425955336
