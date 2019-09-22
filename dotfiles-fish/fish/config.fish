@@ -9,14 +9,18 @@ set -g fish_user_paths "/usr/local/opt/coreutils/libexec/gnubin/" $fish_user_pat
 ## }}}1
 
 
-## fisher-z {{{1
+## fisher-fzf {{{1
 set -U FZF_FIND_FILE_COMMAND "fd --type f . \$dir"
-set -x FZF_REVERSE_ISEARCH_OPTS '--preview-window=up:3 --inline-info --height 80%'
+set -U FZF_REVERSE_ISEARCH_OPTS "--preview-window=up:3 --inline-info --height 100%"
+set -U FZF_PREVIEW_FILE_CMD "bat"
+set -U FZF_COMPLETE 2
+set -U FZF_ENABLE_OPEN_PREVIEW 1
 ## }}}1
 
 
-## fisher-fzf {{{1
+## fisher-z {{{1
 set -U Z_CMD "z"
+set -U Z_OWNER "limakzi"
 ## }}}1
 
 
