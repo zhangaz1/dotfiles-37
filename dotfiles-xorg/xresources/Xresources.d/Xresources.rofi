@@ -1,0 +1,21 @@
+!! Rofi {{{1
+rofi.theme: /usr/share/rofi/themes/paper-float.rasi
+
+rofi.font: FuraCode Nerd Font Mono Medium 14
+rofi.modi: ssh,window,windowcd,drun,run,combi,keys
+rofi.sidebar-mode: true
+rofi.terminal: urxvt
+rofi.ssh-client: ssh
+
+rofi.run-command: fish -c '{cmd}'
+rofi.run-list-command: 'fish -c functions'
+
+rofi.parse-hosts: true
+rofi.parse-known-hosts: true
+
+rofi.hide-scrollbar: true
+
+rofi.cycle: true
+rofi.fuzzy: true
+rofi.case-sensitive: false
+!! }}}1

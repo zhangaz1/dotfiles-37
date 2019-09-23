@@ -1,0 +1,52 @@
+!! URxvt {{{1
+URxvt.chdir: /home/limakzi
+URxvt.loginShell: true
+URxvt.title: urxvt
+URxvt.termName: rxvt-256color
+
+URxvt.imLocale: en_US.UTF-8
+
+URxvt.intensityStyles: true
+URxvt.font: xft:FuraCode Nerd Font Mono:size=14:antialias=true:style=Medium
+URxvt.letterSpace: 0
+
+URxvt.depth: 32
+URxvt.underlineColor: green
+
+URxvt.buffered: true
+
+URxvt.borderless: true
+
+URxvt.scrollBar: false
+
+URxvt.saveLines: 4096
+
+URxvt.cursorBlink: true
+
+URxvt.visualBell: true
+URxvt.urgentOnBell: true
+
+URxvt.secondaryScroll: true
+
+URxvt.insecure: false
+
+URxvt.print-pipe: cat > $HOME/.urxvt/dumps/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
+
+
+!! Extensions
+URxvt.perl-ext-common: autocomplete-ALL-the-things,resize-font,keyboard-select,matcher
+
+!! Complete-all-the-things
+URxvt.keysym.Control-space: perl:aAtt:fuzzy-complete
+
+!! Keyboard-select
+URxvt.keyboard-select-clipboard: true
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+
+!! URLLauncher && Matcher
+URxvt.urlLauncher: xdg-open
+URxvt.matcher.button: 1
+URxvt.keysym.M-u: perl:matcher:list
+
+!! }}}1
