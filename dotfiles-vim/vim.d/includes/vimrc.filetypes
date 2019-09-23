@@ -1,0 +1,3 @@
+"" vim: ft=vim
+
+autocmd BufRead,BufNewFile Saltfile         set ft=Saltfile

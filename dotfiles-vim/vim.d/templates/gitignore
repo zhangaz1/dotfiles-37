@@ -1,0 +1,58 @@
+## os-files {{{1
+.DS_Store
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+desktop.ini
+ehthumbs.db
+Thumbs.db
+## }}}1
+
+
+## tex {{{1
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+## }}}1
+
+
+# vim {{{1
+.swp
+.*.swp
+# }}}1
+
+
+## terraform {{{1
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
+## }}}1
+
+
+## python {{{1
+*.pyc
+*.pyo
+__pycache__
+## }}}1
+
+
+## python-virtualenv {{{1
+.venv/**
+.virtualenv/**
+## }}}1
+
+
+## gitkeep {{{1
+*
+!.gitignore
+## }}}1

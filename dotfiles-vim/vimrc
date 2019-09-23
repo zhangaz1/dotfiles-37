@@ -1,0 +1,356 @@
+"" vim: ft=vim
+
+
+
+
+"" Graphical user interface {{{1
+if has("gui_running")
+    set guioptions-=M
+    set guioptions-=T
+    set guioptions-=e
+    set guioptions-=l
+    set guioptions-=m
+    set guioptions-=r
+    set guioptions-=i
+
+    set guifont=Menlo\ Regular:h16
+endif
+"" }}}1
+
+
+
+
+
+"" Plugins & compatibility {{{1
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+if filereadable(expand("~/.vim/includes/vimrc.bundles"))
+  source ~/.vim/includes/vimrc.bundles
+endif
+
+call vundle#end()
+"" }}}1
+
+
+
+
+
+"" Reading & writing {{{1
+set autoread
+set noautowrite
+set noautowriteall
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+set fsync
+
+set nobackup
+set nowritebackup
+set noswapfile
+"" }}}1
+
+
+
+
+
+"" Indentations {{{1
+set autoindent
+set smartindent
+
+set expandtab
+
+set smarttab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set shiftround
+"" }}}1
+
+
+
+
+
+"" Appearance {{{1
+syntax enable
+colorscheme dracula
+
+set cursorcolumn
+set cursorline
+
+set showtabline=2
+set laststatus=2
+set ruler
+"" }}}1
+
+
+
+
+
+"" Numbering {{{1
+set nonumber
+set relativenumber
+"" }}}1
+
+
+
+
+
+"" Timeouts {{{1
+set timeout
+set ttimeout
+
+set ttimeoutlen=1
+set timeoutlen=150
+"" }}}1
+
+
+
+
+
+"" Keyboard & mouse {{{1
+
+"" Mapleader {{{2
+let mapleader=","
+"" }}}2
+
+"" Backspace {{{2
+set backspace=indent,eol,start
+"" }}}2
+
+"" Extend previous match {{{2
+nnoremap //   /<C-R>/
+nnoremap ///  /<C-R>/\<BAR>
+"" }}}2
+
+"" Improved up,down movement {{{2
+nnoremap j gj
+nnoremap k gk
+"" }}}2
+
+"" Clean highlighting {{{2
+nnoremap <Space> :nohl <cr>
+"" }}}2
+
+"" Keep pattern at the center of a screen {{{2
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+"" }}}2
+
+"" Search for higlight {{{2
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+"" }}}2
+
+"" Strip whitespae {{{2
+noremap <leader>ss :call StripWhitespace()<CR>
+"" }}}2
+"
+"" Indentations movement using '<', '>' {{{2
+vnoremap < <gv
+vnoremap > >gv
+"" }}}2
+"
+"" Disable cursor keys {{{2
+noremap <Up>    <NOP>
+noremap <Down>  <NOP>
+noremap <Left>  <NOP>
+noremap <Right> <NOP>
+"" }}}2
+
+"" Faster window switching {{{2
+nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-k> :wincmd k<CR>
+nnoremap <silent> <C-l> :wincmd l<CR>
+""}}}2
+
+"" }}}1
+
+
+
+
+
+"" Foldings {{{1
+set foldmethod=marker
+"" }}}1""
+
+
+
+
+
+"" Errors {{{1
+set visualbell
+set noerrorbells
+"" }}}1
+
+
+
+
+
+"" Text {{{1
+set nowrap
+set linebreak
+"" }}}1
+
+
+
+
+
+"" Invisibles {{{1
+set list
+set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+set showbreak=↪
+"" }}}1
+
+
+
+
+
+"" Spell checking {{{1
+set nospell
+
+set spelllang=en
+"" }}}1
+
+
+
+
+
+"" Shell, terminal and scrolling {{{1
+set shell=/bin/bash
+
+set ttyfast
+set term=xterm-256color
+set t_Co=256
+
+set scrolloff=999
+"" }}}1
+
+
+
+
+
+"" Searching, clipboard {{{1
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set clipboard=unnamed
+"" }}}1
+
+
+
+
+
+"" Modeline {{{1
+set modeline
+set modelines=4
+"" }}}1
+
+
+
+
+
+"" Skeletons {{{1
+if filereadable(expand("~/.vim/includes/vimrc.skeletons"))
+  source ~/.vim/includes/vimrc.skeletons
+endif
+"" }}}1
+
+
+
+
+
+"" Autochdir {{{1
+set autochdir
+"" }}}1
+
+
+
+
+
+"" Command {{{1
+set showcmd
+"
+"" Wildmode {{{2
+set wildmenu
+set wildmode=longest:full,full
+set wildignore=*.~
+set wildignore+=*.o
+
+set wildignore+=*.png
+set wildignore+=*.jpg
+set wildignore+=*.gif
+
+set wildignore+=*.pyc
+
+set wildignore+=*.swp
+set wildignore+=*.exe
+
+set wildignore+=*.zip
+
+set infercase
+"" }}}2
+
+"" }}}1
+
+
+
+
+
+"" Persistent-undo {{{1
+if has('persistent_undo')
+    set undodir=$HOME/.vim/undo
+    set undolevels=4096
+    set undofile
+endif
+"" }}}1
+
+
+
+
+
+"" Matching {{{1
+set showmatch
+set matchtime=2
+set matchpairs+=<:>
+"" }}}1
+
+
+
+
+
+"" Mode {{{1
+set showmode
+"" }}}1
+
+
+
+
+"" Configure viminfo {{{1
+set viminfo+=n~/.vim/viminfo/viminfo
+"" }}}1
+
+
+
+
+"" Configure memory {{{1
+set maxmempattern=10000
+"" }}}1
+
+
+
+
+"" Plugin -- filetype {{{1
+filetype on
+filetype plugin on
+filetype indent on
+"" }}}1

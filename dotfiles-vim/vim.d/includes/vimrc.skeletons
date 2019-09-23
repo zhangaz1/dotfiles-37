@@ -1,0 +1,10 @@
+"" vim: ft=vim
+
+augroup templates
+  autocmd BufNewFile *.sh                     0r ~/.vim/templates/_star_.sh
+  autocmd BufNewFile .dockerignore            0r ~/.vim/templates/dockerignore
+  autocmd BufNewFile .gitignore               0r ~/.vim/templates/gitignore
+  autocmd BufNewFile Dockerfile               0r ~/.vim/templates/Dockerfile
+  autocmd BufNewFile LICENSE.txt              0r ~/.vim/templates/LICENSE.txt
+  autocmd BufNewFile .pre-commit-config.yaml  0r ~/.vim/templates/pre-commit-config.yaml
+augroup END
