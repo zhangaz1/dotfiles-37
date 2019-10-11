@@ -9,23 +9,44 @@
 
 - link:
     ~/.Trash: directory-trash
+    ~/.bash_sessions: directory-bash-sessions
+    ~/.cache: directory-cache
+
 
 - link:
-    ~/.bash_sessions: directory-bash-sessions
+    ~/.aws: dotfiles-awscli/aws
+
+
+- link:
+    ~/.dircolors: dotfiles-coreutils/coreutils/dircolors
+
 
 - link:
     ~/.config/bat: dotfiles-bat/bat
     ~/.config/fish: dotfiles-fish/fish
     ~/.config/htop: dotfiles-htop/htop
     ~/.config/ranger: dotfiles-ranger/ranger
+    ~/.config/tig: dotfiles-tig/tig
+    ~/.config/nano: dotfiles-nano/nano
+
 
 - link:
     ~/.vimrc: dotfiles-vim/vim/vimrc
     ~/.vim: dotfiles-vim/vim/vim.d
 
+
 - link:
     ~/.gitconfig: dotfiles-git/git/gitconfig
     ~/.git.d: dotfiles-git/git/git.d
 
+
 - link:
     ~/.hushlogin: dotfiles-login/hushlogin/hushlogin
+
+
+- link:
+    ~/.aspell.conf: dotfiles-aspell/aspell/aspell.conf
+
+
+- link:
+    ~/.my.cnf: dotfiles-mysql/mysql/my.cnf
