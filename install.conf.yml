@@ -1,0 +1,31 @@
+---
+
+- defaults:
+    link:
+      relink: true
+      force: true
+
+- clean: ['~']
+
+- link:
+    ~/.Trash: directory-trash
+
+- link:
+    ~/.bash_sessions: directory-bash-sessions
+
+- link:
+    ~/.config/bat: dotfiles-bat/bat
+    ~/.config/fish: dotfiles-fish/fish
+    ~/.config/htop: dotfiles-htop/htop
+    ~/.config/ranger: dotfiles-ranger/ranger
+
+- link:
+    ~/.vimrc: dotfiles-vim/vim/vimrc
+    ~/.vim: dotfiles-vim/vim/vim.d
+
+- link:
+    ~/.gitconfig: dotfiles-git/git/gitconfig
+    ~/.git.d: dotfiles-git/git/git.d
+
+- link:
+    ~/.hushlogin: dotfiles-login/hushlogin/hushlogin
