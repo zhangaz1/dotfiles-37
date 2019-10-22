@@ -53,6 +53,7 @@ cask "mpv"
 cask "transmission"
 cask "vagrant"
 cask "virtualbox"
+cask "skype"
 mas "Evernote", id: 406056744
 mas "feedly", id: 865500966
 mas "Kindle", id: 405399194
