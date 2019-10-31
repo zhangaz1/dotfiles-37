@@ -57,9 +57,10 @@ cask "vagrant"
 cask "virtualbox"
 cask "skype"
 mas "Evernote", id: 406056744
-mas "feedly", id: 865500966
 mas "Kindle", id: 405399194
 mas "Magnet", id: 441258766
 mas "Nozbe", id: 508957583
+mas "OmniGraffle", id: 1142578753
 mas "Pocket", id: 568494494
 mas "Slack", id: 803453959
+mas "feedly", id: 865500966
