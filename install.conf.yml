@@ -12,6 +12,8 @@
     ~/.bash_sessions: directory-bash-sessions
     ~/.cache: directory-cache
 
+- link:
+    ~/.bash_history: /dev/null
 
 - link:
     ~/.aws: dotfiles-awscli/aws
@@ -31,7 +33,7 @@
 
 
 - link:
-    ~/.viminfo: dotfiles-vim/vim/viminfo
+    ~/.viminfo: /dev/null
     ~/.vimrc: dotfiles-vim/vim/vimrc
     ~/.vim: dotfiles-vim/vim/vim.d
 
@@ -51,3 +53,6 @@
 
 - link:
     ~/.my.cnf: dotfiles-mysql/mysql/my.cnf
+
+- link:
+    ~/.lesshst: /dev/null
