@@ -31,6 +31,7 @@
 
 
 - link:
+    ~/.viminfo: dotfiles-vim/vim/viminfo
     ~/.vimrc: dotfiles-vim/vim/vimrc
     ~/.vim: dotfiles-vim/vim/vim.d
 
