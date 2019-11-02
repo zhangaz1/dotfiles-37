@@ -52,10 +52,11 @@ cask "intellij-idea-ce"
 cask "iterm2"
 cask "keybase"
 cask "mpv"
+cask "skype"
+cask "tor-browser"
 cask "transmission"
 cask "vagrant"
 cask "virtualbox"
-cask "skype"
 mas "Evernote", id: 406056744
 mas "Kindle", id: 405399194
 mas "Magnet", id: 441258766
