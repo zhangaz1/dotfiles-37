@@ -44,7 +44,6 @@
 	followTags = true
 
 
-
 [merge]
 	log = true
 	tool = vimdiff
@@ -112,7 +111,6 @@
 	sslVersion = tlsv1.3
 
 
-
 [alias]
 	init = flow init -d
 	i = flow init -d
@@ -137,7 +135,6 @@
 [tag]
 	gpgsign = true
 	forceSignAnnotated = true
-
 
 
 [secrets]
