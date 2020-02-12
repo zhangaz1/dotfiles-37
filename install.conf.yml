@@ -33,6 +33,9 @@
 
 
 - link:
+    ~/.nmap: dotfiles-nmap
+
+- link:
     ~/.viminfo: /dev/null
     ~/.vimrc: dotfiles-vim/vim/vimrc
     ~/.vim: dotfiles-vim/vim/vim.d
