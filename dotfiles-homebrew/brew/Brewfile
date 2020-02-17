@@ -60,6 +60,7 @@ cask "skype"
 cask "tor-browser"
 cask "transmission"
 cask "vagrant"
+cask "sentinel"
 cask "virtualbox"
 mas "Evernote", id: 406056744
 mas "Kindle", id: 405399194
