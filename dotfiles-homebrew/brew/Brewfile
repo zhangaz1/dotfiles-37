@@ -66,6 +66,7 @@ cask "transmission"
 cask "vagrant"
 cask "sentinel"
 cask "virtualbox"
+cask "session-manager-plugin"
 mas "Evernote", id: 406056744
 mas "Kindle", id: 405399194
 mas "Magnet", id: 441258766
