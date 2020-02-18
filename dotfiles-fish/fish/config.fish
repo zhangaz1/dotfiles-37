@@ -2,10 +2,16 @@
 set fish_greeting
 ## }}}1
 
+
 ## path {{{1
 set -g fish_user_paths "/usr/local/opt/ncurses/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/coreutils/libexec/gnubin/" $fish_user_paths
+## }}}1
+
+
+## iterm2 {{{1
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 ## }}}1
 
 
