@@ -15,8 +15,12 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
+local screenshot = require("plugins.screenshot")
+
+
 local battery_widget = require("widgets.battery")
 local brightness_widget = require("widgets.brightness")
+
 
 
 -- Enable hotkeys help widget for VIM and other apps
@@ -253,14 +257,18 @@ globalkeys = gears.table.join(
     awful.key({ }, "XF86MonBrightnessUp",   function () awful.spawn({"xbacklight", "-inc", "15"}) end, {description = "increase screen brightness",  group = "system"}),
     awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn({"xbacklight", "-dec", "15"}) end, {description = "descrease screen brightness", group = "system"}),
 
+    -- Browser
+    awful.key({ modkey }, "w",      function () awful.spawn.raise_or_spawn(browser) end, {description = "open a browser", group = "launcher"}),
+
     -- Terminal
     awful.key({ modkey }, "Return", function () awful.spawn.raise_or_spawn(terminal) end, {description = "open a terminal", group = "launcher"}),
 
     -- File browser
     awful.key({ modkey }, "e", function () awful.spawn.raise_or_spawn(terminal .. " -e " .. " ranger") end, {description = "open a file browsr", group = "launcher"}),
 
-    -- Browser
-    awful.key({ modkey }, "w",      function () awful.spawn.raise_or_spawn(browser) end, {description = "open a browser", group = "launcher"}),
+    -- Screenshots
+    awful.key({         }, "Print", scrot_full,   {description = "Take a screenshot of entire screen",    group = "screenshot"}),
+    awful.key({ modkey, }, "Print", scrot_window, {description = "Take a screenshot of selection",        group = "screenshot"}),
 
     -- Rofi
     awful.key({ modkey,           }, "r", function () awful.spawn(rofi) end, {description = "rofi", group = "launcher"})
