@@ -1,0 +1,7 @@
+!! xautolock {{{1
+xautolock.time: 2
+xautolock.secure: true
+xautolock.noclose: true
+xautolock.locker: i3lock
+xautolock.notify: /usr/bin/notify-send
+!! }}}1

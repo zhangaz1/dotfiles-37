@@ -3,3 +3,4 @@
 #include ".Xresources.d/Xresources.rofi"
 #include ".Xresources.d/Xresources.xcursor"
 #include ".Xresources.d/Xresources.urxvt"
+#include ".Xresources.d/Xresources.xautolock"

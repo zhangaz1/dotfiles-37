@@ -5,9 +5,9 @@ URxvt.title: urxvt
 URxvt.termName: rxvt-256color
 
 URxvt.imLocale: en_US.UTF-8
-
 URxvt.intensityStyles: true
-URxvt.font: xft:FuraCode Nerd Font Mono:size=14:antialias=true:style=Medium
+URxvt.font: xft:FiraCode Nerd Font Mono:size=14:antialias=true:style=Medium,xft:FiraCode Nerd Font:size=14:antialias=true:style=Medium,xft:DejaVu Sans,xft:Terminus
+
 URxvt.letterSpace: 0
 
 URxvt.depth: 32

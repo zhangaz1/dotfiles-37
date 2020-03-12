@@ -2,7 +2,7 @@
 rofi.theme: /usr/share/rofi/themes/paper-float.rasi
 
 rofi.font: FuraCode Nerd Font Mono Medium 14
-rofi.modi: ssh,window,windowcd,drun,run,combi,keys
+rofi.modi: ssh,window,windowcd,drun,run,combi,keys,file-browser
 rofi.sidebar-mode: true
 rofi.terminal: urxvt
 rofi.ssh-client: ssh
