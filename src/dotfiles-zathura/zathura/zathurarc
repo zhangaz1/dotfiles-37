@@ -1,0 +1,51 @@
+set font "Inconsolata 18"
+
+set search-adjust true
+set incremental-search true
+
+set page-padding 8
+set pages-per-row 1
+
+set adjust-open width
+set window-title-page true
+set window-title-basename true
+set window-title-home-tilde true
+
+set selection-clipboard clipboard
+
+set n-completion-items 16
+set completion-bg "#282A36"
+set completion-fg "#F8F8F2"
+
+set completion-group-bg "#282A36"
+set completion-group-fg "#50FA7B"
+
+set completion-highlight-fg "#282A36"
+set completion-highlight-bg "#F8F8F2"
+
+set default-bg "#282A36"
+set default-fg "#F8F8F2"
+
+set inputbar-bg "#282A36"
+set inputbar-fg "#F8F8F2"
+
+set notification-bg "#282A36"
+set notification-fg "#F8F8F2"
+
+set notification-error-bg "#FF5555"
+set notification-error-fg "#F8F8F2"
+
+set notification-warning-bg "#FF5555"
+set notification-warning-fg "#F8F8F2"
+
+set statusbar-bg "#282A36"
+set statusbar-fg "#F8F8F2"
+
+set index-bg "#282A36"
+set index-fg "#F8F8F2"
+
+set index-active-bg "#282A36"
+set index-active-fg "#F8F8F2"
+
+set render-loading-bg "#282A36"
+set render-loading-fg "#F8F8F2"
