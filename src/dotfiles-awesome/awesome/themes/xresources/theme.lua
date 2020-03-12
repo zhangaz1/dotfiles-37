@@ -14,7 +14,15 @@ local themes_path = gfs.get_themes_dir()
 local theme = dofile(themes_path.."default/theme.lua")
 -- load vector assets' generators for this theme
 
-theme.font          = "FuraCode Nerd Font Medium 12"
+theme.font                      = "FuraCode Nerd Font Medium 14"
+theme.hotkeys_font              = "FuraCode Nerd Font Medium 14"
+theme.hotkeys_description_font  = "FuraCode Nerd Font Medium 14"
+
+theme.separator_thickness    = dpi(4)
+theme.separator_span_ratio   = dpi(1)
+theme.separator_border_color = xrdb.foreground
+
+theme.wallpaper     = "~/.wallpaper.png"
 
 theme.bg_normal     = xrdb.background
 theme.bg_focus      = xrdb.color7
@@ -28,10 +36,11 @@ theme.fg_urgent     = theme.bg_normal
 theme.fg_minimize   = theme.bg_normal
 
 theme.useless_gap   = dpi(3)
-theme.border_width  = dpi(4)
+theme.border_width  = dpi(5)
 theme.border_normal = xrdb.color0
 theme.border_focus  = theme.bg_focus
 theme.border_marked = xrdb.color10
+
 
 theme.tasklist_disable_icon = true
 
@@ -102,14 +111,6 @@ for s in theme.bg_normal:gmatch("[a-fA-F0-9][a-fA-F0-9]") do
 end
 local is_dark_bg = (bg_numberic_value < 383)
 
--- Generate wallpaper:
-local wallpaper_bg = xrdb.color8
-local wallpaper_fg = xrdb.color7
-local wallpaper_alt_fg = xrdb.color12
-if not is_dark_bg then
-    wallpaper_bg, wallpaper_fg = wallpaper_fg, wallpaper_bg
-end
-theme.wallpaper = function(s) return theme_assets.wallpaper(wallpaper_bg, wallpaper_fg, wallpaper_alt_fg, s) end
 
 return theme
 

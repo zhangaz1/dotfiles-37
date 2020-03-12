@@ -14,6 +14,11 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+
+local battery_widget = require("widgets.battery")
+local brightness_widget = require("widgets.brightness")
+
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -49,7 +54,7 @@ beautiful.init("~/.config/awesome/themes/xresources/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
-browser = "google-chrome"
+browser = "brave"
 rofi = "rofi -show combi"
 editor = os.getenv("EDITOR") or "editor"
 
@@ -183,6 +188,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
+            s.mylayoutbox,
             s.mypromptbox,
         },
 	{
@@ -190,8 +196,9 @@ awful.screen.connect_for_each_screen(function(s)
 	},
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            s.mylayoutbox,
             wibox.widget.systray(),
+            battery_widget(),
+            brightness_widget(),
             mytextclock,
         },
     }
@@ -200,13 +207,16 @@ end)
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help, {description="show help", group="awesome"}),
+    -- Help-window
+    awful.key({ modkey, "Shift"   }, "/",      hotkeys_popup.show_help, {description="show help", group="awesome"}),
+
+
+    -- Tag-management
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,  {description = "view previous", group = "tag"}),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext, {description = "view next", group = "tag" }),
 
     awful.key({ modkey,           }, "j", function () awful.client.focus.byidx( 1) end, { description = "focus next by index", group = "client"}),
     awful.key({ modkey,           }, "k", function () awful.client.focus.byidx(-1) end, { description = "focus previous by index", group = "client"}),
-    awful.key({ modkey,           }, "r", function () awful.spawn(rofi) end, {description = "rofi", group = "launcher"}),
 
     -- Layout manipulation
     awful.key({ modkey            }, ".", function () awful.client.swap.byidx(  1)    end, {description = "swap with next client by index", group = "client"}),
@@ -230,9 +240,18 @@ globalkeys = gears.table.join(
     -- Prompt
     awful.key({ modkey,           }, "l", function () awful.spawn("slock " .. "systemctl suspend") end, {description = "lock screen", group = "screen"}),
 
+    -- Audio
+    awful.key({ }, "XF86AudioMute",        function () awful.spawn({"amixer", "-q", "sset", "Master", "toggle"}) end, {description = "mute volume",  group = "volume"}),
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.spawn({"amixer", "-q", "sset", "Master", "3%+"}) end,   {description = "increase volume", group = "volume"}),
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.spawn({"amixer", "-q", "sset", "Master", "3%-"}) end,   {description = "decrease volume", group = "volume"}),
+
     -- Brightness
-    awful.key({ modkey }, "Up", function () awful.spawn({"light", "-A", "1"}) end, {description = "increase screen brightness", group = "system"}),
-    awful.key({ modkey }, "Down", function () awful.spawn({"light", "-U", "1"}) end, {description = "decrease screen brightness", group = "system"}),
+    awful.key({ }, "XF86MonBrightnessUp",   function () awful.spawn({"xbacklight", "-inc", "15"}) end, {description = "increase screen brightness",  group = "system"}),
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn({"xbacklight", "-dec", "15"}) end, {description = "descrease screen brightness", group = "system"}),
+
+    -- Brightness
+    awful.key({ }, "XF86MonBrightnessUp",   function () awful.spawn({"xbacklight", "-inc", "15"}) end, {description = "increase screen brightness",  group = "system"}),
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn({"xbacklight", "-dec", "15"}) end, {description = "descrease screen brightness", group = "system"}),
 
     -- Terminal
     awful.key({ modkey }, "Return", function () awful.spawn.raise_or_spawn(terminal) end, {description = "open a terminal", group = "launcher"}),
@@ -241,7 +260,10 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "e", function () awful.spawn.raise_or_spawn(terminal .. " -e " .. " ranger") end, {description = "open a file browsr", group = "launcher"}),
 
     -- Browser
-    awful.key({ modkey }, "q",      function () awful.spawn.raise_or_spawn(browser) end, {description = "open a browser", group = "launcher"})
+    awful.key({ modkey }, "w",      function () awful.spawn.raise_or_spawn(browser) end, {description = "open a browser", group = "launcher"}),
+
+    -- Rofi
+    awful.key({ modkey,           }, "r", function () awful.spawn(rofi) end, {description = "rofi", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
@@ -361,6 +383,7 @@ awful.rules.rules = {
     { rule = { class = "Firefox" }, properties = { screen = 1, switch_to_tags = true, tag = "" } },
     { rule = { class = "Chromium" }, properties = { screen = 1, switch_to_tags = true, tag = "" } },
     { rule = { class = "Google-chrome" }, properties = { screen = 1, switch_to_tags = true, tag = "" } },
+    { rule = { class = "Brave-browser" }, properties = { screen = 1, switch_to_tags = true, tag = "" } },
 
     -- Set URxvt to always run on tag "2"
     { rule = { window_title = "ranger" }, properties = { screen = 1, switch_to_tags = true, tag = "", } },
