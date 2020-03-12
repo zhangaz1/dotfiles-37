@@ -10,4 +10,4 @@ unset backup
 unset mouse
 unset casesensitive
 
-include /usr/local/share/nano/*.nanorc
+include /usr/share/nano-syntax-highlighting/*.nanorc
