@@ -8,6 +8,7 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local xrdb = xresources.get_current_theme()
 local gfs = require("gears.filesystem")
+local shape = require("gears.shape")
 local themes_path = gfs.get_themes_dir()
 
 -- inherit default theme

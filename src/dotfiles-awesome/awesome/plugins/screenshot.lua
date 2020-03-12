@@ -25,5 +25,8 @@ function scrot(cmd , callback, args)
 end
 
 function scrot_callback(text)
-    naughty.notify({ text = text, timeout = 1 })
+    naughty.notify({
+      text = text,
+      title = "Screenshot",
+      timeout = 1 })
 end
