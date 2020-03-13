@@ -4,3 +4,4 @@
 #include ".Xresources.d/Xresources.xcursor"
 #include ".Xresources.d/Xresources.urxvt"
 #include ".Xresources.d/Xresources.xautolock"
+#include ".Xresources.d/Xresources.sxiv"
