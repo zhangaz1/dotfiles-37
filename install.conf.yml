@@ -5,6 +5,7 @@
       relink: true
       force: true
 
+
 - clean: ['~']
 
 
@@ -17,18 +18,20 @@
 
 
 - create:
-    - ~/desktop
-    - ~/downloads
-    - ~/templates
-    - ~/public
-    - ~/documents
-    - ~/music
-    - ~/pictures
-    - ~/videos
+    - ~/Desktop
+    - ~/Downloads
+    - ~/Templates
+    - ~/Public
+    - ~/Documents
+    - ~/Music
+    - ~/Library
+    - ~/Pictures
+    - ~/Movies
 
 
 - create:
     - ~/.config
+
 
 - link:
     ~/.config/yay: src/dotfiles-yay/yay/
