@@ -14,7 +14,6 @@
     ~/.cache: src/directory-cache
     ~/.gnupg: src/directory-gnupg
     ~/.pki: src/directory-pki
-    ~/.trash: src/directory-trash
 
 
 - create:
@@ -27,7 +26,7 @@
     - ~/Library
     - ~/Pictures
     - ~/Movies
-
+    - ~/.venv
 
 - create:
     - ~/.config

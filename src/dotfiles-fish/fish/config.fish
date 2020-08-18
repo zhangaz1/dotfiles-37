@@ -10,6 +10,12 @@ set -g fish_user_paths "/usr/local/opt/coreutils/libexec/gnubin/" $fish_user_pat
 ## }}}1
 
 
+## locale {{{1
+set -x LC_ALL en_US.UTF-8
+set -x LC_CTYPE en_US.UTF-8
+## }}}1
+
+
 ## iterm2 {{{1
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 ## }}}1
@@ -50,4 +56,9 @@ set -U SPACEFISH_BATTERY_THRESHOLD 100
 set -U SPACEFISH_PROMPT_SEPARATE_LINE false
 
 set -U SPACEFISH_CHAR_SHOW false
+## }}}1
+
+
+## fisher-python3-virtualenv {{{1
+source ~/.venv/bin/activate.fish
 ## }}}1
