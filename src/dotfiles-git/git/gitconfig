@@ -13,6 +13,7 @@
 
 [init]
 	templateDir = ~/.git.d/git-template.d/
+	defaultBranch = main
 
 
 [branch]
